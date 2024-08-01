@@ -1,0 +1,266 @@
+ npx hardhat console --network localhost
+Welcome to Node.js v20.16.0.
+Type ".help" for more information.
+> const { ethers } = require("ethers");
+undefined
+>  let NewHelloAbi = require('./contractsData/Hello.json');
+undefined
+> let  HelloAddress = require('./contractsData/Hello-address.json');
+undefined
+> const contract4 = new ethers.Contract(HelloAddress
+>  const provider = new ethers.JsonRpcProvider("http://ec2-18-246-218-128.us-west-2.compute.amazonaws.com:8545")
+undefined
+>  const provider19 = new ethers.JsonRpcProvider("http://ec2-18-246-218-128.us-west-2.compute.amazonaws.com:8545")
+>  const contract = new ethers.Contract(HelloAddress.address, NewHelloAbi, provider);
+Uncaught TypeError: abi is not iterable
+    at new Interface (/home/ubuntu/hello/node_modules/ethers/src.ts/abi/interface.ts:342:25)
+    at Function.from (/home/ubuntu/hello/node_modules/ethers/src.ts/abi/interface.ts:1269:16)
+    at new BaseContract (/home/ubuntu/hello/node_modules/ethers/src.ts/contract/contract.ts:690:33)
+    at new Contract (/home/ubuntu/hello/node_modules/ethers/src.ts/contract/contract.ts:1120:1)
+>  const contract = new ethers.Contract(HelloAddress.address, NewHelloAbi.abi, provider);
+Uncaught SyntaxError: Identifier 'contract' has already been declared
+>  const contract2 = new ethers.Contract(HelloAddress.address, NewHelloAbi.abi, provider);
+undefined
+>  const filter = contract2.filters.myEventTest(null)
+undefined
+> contract2.on(filter, (info) => {  console.log("info",info); });
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 774,
+  [Symbol(trigger_async_id_symbol)]: 15
+}
+> info ContractEventPayload {
+  filter: PreparedTopicFilter {
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    }
+  },
+  emitter: Contract {
+    target: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    runner: JsonRpcProvider {},
+    filters: {},
+    fallback: null,
+    [Symbol(_ethersInternal_contract)]: {}
+  },
+  log: EventLog {
+    provider: JsonRpcProvider {},
+    transactionHash: '0x1d806a14afc2d1da904e00dff157261790ca465f6ca3703e3156fd4d0f3ab503',
+    blockHash: '0x2ebc7d9836f1d55fedc09521d07a4710f5398b6d96da0d6033ca10870bcf825a',
+    blockNumber: 27,
+    removed: false,
+    address: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    data: '0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000d6262626262626262626262626200000000000000000000000000000000000000',
+    topics: [
+      '0x319b9e64f64b033d6b8102f9688735cefac53d266b6e85d21cf85e9856fc7b99'
+    ],
+    index: 0,
+    transactionIndex: 0,
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    },
+    args: Result(1) [ 'bbbbbbbbbbbbb' ]
+  },
+  args: Result(1) [ 'bbbbbbbbbbbbb' ],
+  fragment: EventFragment {
+    type: 'event',
+    inputs: [ [ParamType] ],
+    name: 'myEventTest',
+    anonymous: false
+  }
+}
+info ContractEventPayload {
+  filter: PreparedTopicFilter {
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    }
+  },
+  emitter: Contract {
+    target: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    runner: JsonRpcProvider {},
+    filters: {},
+    fallback: null,
+    [Symbol(_ethersInternal_contract)]: {}
+  },
+  log: EventLog {
+    provider: JsonRpcProvider {},
+    transactionHash: '0x675683e5071de16df5e5d24870e9ba19162b2d938015eafe1e9acbbb124d6337',
+    blockHash: '0x5a124bee696aa83c37bba43b0187352e3a22c2147a8dad2ba4046c63bc0e0e38',
+    blockNumber: 28,
+    removed: false,
+    address: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    data: '0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000086f696f696f69696f000000000000000000000000000000000000000000000000',
+    topics: [
+      '0x319b9e64f64b033d6b8102f9688735cefac53d266b6e85d21cf85e9856fc7b99'
+    ],
+    index: 0,
+    transactionIndex: 0,
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    },
+    args: Result(1) [ 'oioioiio' ]
+  },
+  args: Result(1) [ 'oioioiio' ],
+  fragment: EventFragment {
+    type: 'event',
+    inputs: [ [ParamType] ],
+    name: 'myEventTest',
+    anonymous: false
+  }
+}
+> contract2.on(filter, (info) => {  console.log("info",info); });
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 1712,
+  [Symbol(trigger_async_id_symbol)]: 15
+}
+> info ContractEventPayload {
+  filter: PreparedTopicFilter {
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    }
+  },
+  emitter: Contract {
+    target: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    runner: JsonRpcProvider {},
+    filters: {},
+    fallback: null,
+    [Symbol(_ethersInternal_contract)]: {}
+  },
+  log: EventLog {
+    provider: JsonRpcProvider {},
+    transactionHash: '0xfe4aca6f12b2f75ac3c2ace5abccb3f326956b3d7b05ca32fe7940777b6e0ea3',
+    blockHash: '0x19ef7802abdecc54372be26828a3fb86a85643d2d0ba98be195a9cc54933b024',
+    blockNumber: 29,
+    removed: false,
+    address: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    data: '0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000146f696f696f69696f787878787878787878787878000000000000000000000000',
+    topics: [
+      '0x319b9e64f64b033d6b8102f9688735cefac53d266b6e85d21cf85e9856fc7b99'
+    ],
+    index: 0,
+    transactionIndex: 0,
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    },
+    args: Result(1) [ 'oioioiioxxxxxxxxxxxx' ]
+  },
+  args: Result(1) [ 'oioioiioxxxxxxxxxxxx' ],
+  fragment: EventFragment {
+    type: 'event',
+    inputs: [ [ParamType] ],
+    name: 'myEventTest',
+    anonymous: false
+  }
+}
+info ContractEventPayload {
+  filter: PreparedTopicFilter {
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    }
+  },
+  emitter: Contract {
+    target: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    runner: JsonRpcProvider {},
+    filters: {},
+    fallback: null,
+    [Symbol(_ethersInternal_contract)]: {}
+  },
+  log: EventLog {
+    provider: JsonRpcProvider {},
+    transactionHash: '0xfe4aca6f12b2f75ac3c2ace5abccb3f326956b3d7b05ca32fe7940777b6e0ea3',
+    blockHash: '0x19ef7802abdecc54372be26828a3fb86a85643d2d0ba98be195a9cc54933b024',
+    blockNumber: 29,
+    removed: false,
+    address: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
+    data: '0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000146f696f696f69696f787878787878787878787878000000000000000000000000',
+    topics: [
+      '0x319b9e64f64b033d6b8102f9688735cefac53d266b6e85d21cf85e9856fc7b99'
+    ],
+    index: 0,
+    transactionIndex: 0,
+    interface: Interface {
+      fragments: [Array],
+      deploy: [ConstructorFragment],
+      fallback: null,
+      receive: false
+    },
+    fragment: EventFragment {
+      type: 'event',
+      inputs: [Array],
+      name: 'myEventTest',
+      anonymous: false
+    },
+    args: Result(1) [ 'oioioiioxxxxxxxxxxxx' ]
+  },
+  args: Result(1) [ 'oioioiioxxxxxxxxxxxx' ],
+  fragment: EventFragment {
+    type: 'event',
+    inputs: [ [ParamType] ],
+    name: 'myEventTest',
+    anonymous: false
+  }
+}
+
